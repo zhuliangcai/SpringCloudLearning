@@ -14,6 +14,10 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<modules>
+		<module>nacos-consumer</module>
+		<module>nacos-provider</module>
+	</modules>
 
 
 </project>

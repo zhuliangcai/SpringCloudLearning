@@ -11,5 +11,13 @@ spring:
         server-addr: 127.0.0.1:8848
         file-extension: yaml
         prefix: nacos-provider
+        ext-config[0]:
+          data-id: actuator.properties
+          group: DEFAULT_GROUP
+          refresh: true
+        ext-config[1]:
+          data-id: actuator1.properties
+          group: DEFAULT_GROUP
+          refresh: true
   profiles:
     active: dev

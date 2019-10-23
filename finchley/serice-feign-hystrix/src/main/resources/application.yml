@@ -1,0 +1,16 @@
+# spring命令行传递参数 --server.port
+server:
+  port: 8764
+
+spring:
+  application:
+    name: service-feign
+
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

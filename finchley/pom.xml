@@ -26,6 +26,9 @@
         <module>service-ribbon-hystrix</module>
         <module>serice-feign</module>
         <module>serice-feign-hystrix</module>
+        <module>service-zuul</module>
+        <module>config-server</module>
+        <module>config-client</module>
     </modules>
 
     <properties>

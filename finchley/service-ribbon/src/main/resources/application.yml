@@ -1,6 +1,6 @@
 # spring命令行传递参数 --server.port
 server:
-  port: 8764
+  port: 8763
 
 spring:
   application:

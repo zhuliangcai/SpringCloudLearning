@@ -2,6 +2,11 @@ server:
   port: 8761
 
 eureka:
+  server:
+    # 关闭保护机制
+    #剔除失效服务间隔
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 2000
   instance:
     hostname: localhost
   client:
@@ -13,3 +18,9 @@ eureka:
 spring:
   application:
     name: eurka-server
+
+
+
+
+
+

@@ -2,6 +2,8 @@ server:
   port: 8761
 
 eureka:
+  dashboard:
+    path: /myeuraka
   server:
     # 关闭保护机制
     #剔除失效服务间隔

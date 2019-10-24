@@ -22,6 +22,7 @@
     <modules>
         <module>eureka-server</module>
         <module>service-hi</module>
+        <module>service-hi-war</module>
         <module>service-ribbon</module>
         <module>service-ribbon-hystrix</module>
         <module>serice-feign</module>

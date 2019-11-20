@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="mybean" class="org.cloud.spring.BeanObject"></bean>
+    <bean id="aBean" class="org.cloud.spring.ABean">
+        <property name="sql">
+            <value>
+                select a.fnumber "number", a.fid "id" from t_bd_material a left join t_bd_material_l b on b.fid=a.fid and b.flocaleid='zh_CN' where ((a.fissale = ? and (a.fenable = ? or a.fenable is null)) and (((((a.fnumber like ? or a.fpinyin like ?) or b.fname like ?) or a.ffullpinyin like ?) or a.fbarcode like ?) or a.fhelpcode like ?)) order by a.fnumber limit 10000
+            </value>
+        </property>
+        <property name="chinese">
+            <value>
+                tsv_fulltext_fname @@to_tsquery ( 'public.zhparser_config', '每益添:*' )
+            </value>
+        </property>
+
+        <property name="nochinese">
+            <value>
+                tsv_fulltext_mutli  @@ to_tsquery ( 'public.zhparser_config', '每益添:*' )
+            </value>
+        </property>
+    </bean>
+
+</beans>

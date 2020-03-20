@@ -40,20 +40,35 @@ public class TestFactoryBean {
 //            System.out.print(i + " ");
 //        }
 
-        testSpec();
+        String str = "LED筒灯 CEA12501E  4W 3000K 24 DWDW";
+        String[] s = str.split(" ");
+        for (int i = 0; i < s.length; i++) {
+            System.out.println(s[i]);
+        }
+//        testSpec();
 
     }
 
     private static void testSpec() {
-        String[] str = {"/_!、\"商$特 @殊 % /品'|^","!@   #$%   ^&*())_+=-09 8{}|【】、[]\\","","n!@#$  %^&*x"};
+        String[] str = {"LED筒灯 CEA12501E Ⅱ 4W 3000K 24° DW/DW","/_!、\"商$特 @殊 % /品'|^","!@   #$%   ^&*())_+=-09 8{}|【】、[]\\","! *","n!@#$  %^&*x"};
         for (int i = 0; i < str.length; i++) {
             String filtration = filtration0(str[i]);
-            System.out.println("==>"+ filtration);
+            System.out.println("==>"+ filtration+"<==");
+            System.out.println("==>"+ isBlank(filtration)+"<==");
             System.out.println(hasBlank(filtration));
         }
 
     }
 
+    /**
+     * 判断是否是空格
+     * @param filtration
+     * @return
+     */
+    private static boolean isBlank(String filtration) {
+        return filtration==null||filtration.trim().length()==0;
+
+    }
     /**
      * 判断是否包含空格
      * @param filtration
@@ -61,7 +76,7 @@ public class TestFactoryBean {
      */
     private static boolean hasBlank(String filtration) {
         if(filtration==null||filtration.length()<1){
-            return true;
+            return false;
         }
         String[] s = filtration.split(" ");
         return s.length>1;
